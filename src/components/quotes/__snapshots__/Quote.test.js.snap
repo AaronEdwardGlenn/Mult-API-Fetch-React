@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote component quote matches the snap 1`] = `
+<figure>
+  <img
+    src="yah/brah/img"
+  />
+  <figcaption>
+    "
+    calvin
+    " 
+    -- by coolidge
+  </figcaption>
+</figure>
+`;

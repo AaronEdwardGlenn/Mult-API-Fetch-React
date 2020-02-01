@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Quote = ({ text, name, img }) => (
   <figure>
     <img src={img} />
-    <figcaption>&quote;{text}&quote; {name ? `-- by ${name}` : ''}</figcaption>
+    <figcaption>&quot;{text}&quot; {name ? `-- by ${name}` : ''}</figcaption>
             
   </figure>
     

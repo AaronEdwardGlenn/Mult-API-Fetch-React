@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`our button component can match the snap 1`] = `
+<button>
+  BUTT
+</button>
+`;
+
+exports[`our button component can match the snap with a prop passed 1`] = `
+<button
+  value="BUTT"
+>
+  COOL
+</button>
+`;

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import QuoteFetcher from './QuoteFetcher';
 
 jest.mock('../services/quotesAPI.js', () => ({
-    getRonQuote: jest.fn(() => Promise.resolve())
+  getRonQuote: jest.fn(() => Promise.resolve())
 })); 
 
 describe('quote fetch container', () => {
@@ -18,20 +18,22 @@ describe('quote fetch container', () => {
     });
     expect(wrapper.state('quoteProvider')).toEqual('futurama');
   });
+
   it('fetches from the correct API based on quoteProvider func', () => {
     const wrapper = shallow(<QuoteFetcher />); 
     const quoteFetcher = wrapper.instance(); 
     
-    wrapper.setState({ quoteProvier: 'ron' })
+    wrapper.setState({ quoteProvier: 'ron' });
 
     quoteFetcher.fetch(); 
   });
   expect(wrapper.state('quote').toEqual({
-      text: 'Cool', 
-      name: 'Quote', 
-      img: 'asdf/asdf/cool.png'
-    });
+    text: 'Cool', 
+    name: 'Quote', 
+    img: 'asdf/asdf/cool.png'
+  }));
 });
+
 
 
 

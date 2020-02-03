@@ -10,20 +10,20 @@ const quoteProviderFactory = {
 
 export default class QuoteFetcher extends Component {
     state = {
-      quoteProvider: 'simpsons', 
+      quoteProvider: 'ron', 
       quote: { text: '', name: '', img: '' }
+    }
+
+    componentDidMount() {
+      this.fetch();
     }
 
     changeQuoteProvider = (event) => {
       this.setState({ quoteProvider: event.target.value });
     }
 
-    componentDidMount() {
-      this.fetch(); 
-    }
-
     fetch = () => {
-      return quoteProviderFactory[this.state.quoteProvider]
+      return quoteProviderFactory[this.state.quoteProvider]()
         .then(quote => this.setState({ quote }));
     }
     
@@ -31,7 +31,9 @@ export default class QuoteFetcher extends Component {
     render() {
       const { quote } = this.state;
       const radioButtons = [
-        { label: 'Ron Swanson', value: 'Ron' }
+        { label: 'Ron Swanson', value: 'Ron' }, 
+        { label: 'Futurama', value: 'futurama' },
+
 
 
           

@@ -2,7 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import QuoteFetcher from './QuoteFetcher';
 
-jest.mock('../services/quotesAPI.js'); 
+jest.mock('../services/quotesAPI.js', () => ({
+    getRonQuote: jest.fn(() => Promise.resolve())
+})); 
 
 describe('quote fetch container', () => {
   it('changes quote providers', () => {
